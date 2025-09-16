@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "version 2",
+			"path": "."
+		},
+		{
+			"name": "buttons",
+			"path": "../buttons"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ISABEL TEGSTRÖM</title>
+
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!--CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<header>
+  <section class="tab-button-container">
+    <button class="tablink home-btn" onclick="openPage('Home', this, '')">ISABEL TEGSTRÖM</button>
+    <button class="tablink about-btn" onclick="openPage('About', this, '')">About</button>
+    <button class="tablink graphics-btn" onclick="openPage('Graphics', this, '')">Graphics</button>
+    <button class="tablink sculptures-btn" onclick="openPage('Sculptures', this, '')">Sculptures</button>
+  </section>
+</header>
+
+  <!-- Tab Content -->
+  <section id="Home" class="tabcontent">
+      <div class="grid-container">
+        <div class="column">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+          <img src="./400.png" alt="">
+        </div>
+      </div>
+  </section>
+
+  <div id="About" class="tabcontent">
+    <div class="box">
+     <section>
+       <img src="/Bilder frontpage/315pxRUTA.png" alt="">
+     </section>
+     <section>
+      <p>Isabel Tegström (b.1994) is a artist originally from Sundsvall now living in Stockholm. 
+        She graduated from Konstfack with a BA in Ceramics and Glass 2021. 
+        Tegström are a part of the studio collective Drömhästen, situated in Bergshamra, northern Stockholm.</p> 
+      <p>
+        Tegström is a materialbased artist, working mainly with ceramics and alabaster. Her work mostly examines the duality of humans relationship with nature. 
+        Through the material she examines themes such as nature, mortality, bodies and wood.</p>
+
+      <p>
+       Something something about graphic design. 
+      </p>
+     </section>
+    </div>
+  </div>
+
+  <div id="Graphics" class="tabcontent">
+    <section>
+      <div class="grid-container">
+        <div class="column">
+          <img src="./Graphics/Skärmavbild 2025-09-15 kl. 22.46.21.png" alt="">
+          <img src="./Graphics/Skärmavbild 2022-12-02 kl. 19.46.35.png" alt="">
+          <img src="./Graphics/gang.png" alt="">
+          <img src="./Graphics/_DSC0113 (1)sofie.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./Graphics/Skärmavbild 2022-12-02 kl. 19.45.31.png" alt="">
+          <img src="./Graphics/Skärmavbild 2022-12-02 kl. 19.45.50.png" alt="">
+          <img src="./Graphics/Skärmavbild 2025-09-11 kl. 11.52.44.png" alt="">
+          <img src="./Graphics/Skärmavbild 2025-09-15 kl. 22.46.56.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./Graphics/dust to form 2 mörkgrön B.jpg" alt="">
+          <img src="./Graphics/Skärmavbild 2025-09-15 kl. 22.47.22.png" alt="">
+          <img src="./Graphics/Gatupratare drömhästen .png" alt="">
+          <img src="./Graphics/Skärmavbild 2022-12-02 kl. 19.46.08.png" alt="">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="Sculptures" class="tabcontent">
+    <section>
+      <div class="grid-container">
+        <div class="column">
+          <img src="./Sculptures/1.jpg" alt="">
+          <img src="./Sculptures/2.jpg" alt="">
+          <img src="./Sculptures/3.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./Sculptures/4.png" alt="">
+          <img src="./Sculptures/5.jpg" alt="">
+          <img src="./Sculptures/6.jpg" alt="">
+        </div>
+        <div class="column">
+          <img src="./Sculptures/7.jpg" alt="">
+          <img src="./Sculptures/8.jpg" alt="">
+          <img src="./Sculptures/9.png" alt="">
+        </div>
+        <div class="column">
+          <img src="./Bilder frontpage/315pxRUTA.png" alt="">
+          <img src="./Bilder frontpage/315pxRUTA.png" alt="">
+          <img src="./Bilder frontpage/315pxRUTA.png" alt="">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab Logic -->
+  <script>
+    function openPage(pageName, elm, color) {
+      let tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      let tablinks = document.getElementsByClassName("tablink");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+
+      document.getElementById(pageName).style.display = "block";
+      elm.style.backgroundColor = color;
+    }
+
+    
+    window.onload = function () {
+      document.querySelector(".tablink").click();
+    };
+  </script>
+
+  <footer>
+    <div class="container">
+      <img src="./5335781_camera_instagram_social media_instagram logo_icon.png" alt="">
+      <a href="https://www.instagram.com/tegstroem/" target="_blank">@tegstroem</a>
+      <a href="https://www.instagram.com/drom.hasten/" target="_blank">@drom.hasten</a>
+    </div>
+  </footer>
+</body>
+</html>
