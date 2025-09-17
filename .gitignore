@@ -1,0 +1,15 @@
+# OS files
+.DS_Store
+**/.DS_Store
+
+# Design sources
+*.psd
+*.kra
+*.xcf
+
+# Editors
+*.code-workspace
+
+# Temp/backup
+*~
+Thumbs.db
