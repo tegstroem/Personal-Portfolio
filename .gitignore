@@ -1,8 +1,0 @@
-# Ignore PNG and common image files
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.tiff
-*.svg

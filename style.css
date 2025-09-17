@@ -1,118 +1,62 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Space+Mono&display=swap');
 
+/* Base body styling */
+body {
+  min-height: 100vh;
+  background: rgb(252, 169, 96);
+  background-image: url('./Icons/overlay.png');
+  background-repeat: no-repeat; 
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
+/* Header Button Container */
 header .tab-button-container {
+  position: fixed;
   display: flex;
-  justify-content: center;            
-  padding: 30px;
+  justify-content: center;
   gap: 6em;
+  padding: 1.5rem;
+  background-color: rgb(203, 102, 58);
+  width: 100%;
+;
 }
 
-header .home-btn{
-  color: rgb(0, 0, 0);
-  font-size: 33px;
-  font-weight: 600; 
-  margin-right: 6em;
-  letter-spacing: 0px;
+/* Buttons */
 
-}
-
-.tablink {
+.home-btn {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 28px;
+  font-weight: 600;
   color: black;
-  background-color: transparent;
-  padding: 10px;
-  font-family: "MedievalSharp", cursive;
-  font-size: 16px;
-  text-align: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin-top: 30px;
-  margin-left: 0;
-  margin-right: 0;
-  position: relative; 
-  padding: 12px 24px;
+  letter-spacing: 0;
+  padding-top: 4px;
   border: none;
   cursor: pointer;
-  overflow: hidden;
-  z-index: 1;
-  }
-
-.home-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('./squggle.png');
-  background-size: 85%;        
-  background-repeat: no-repeat;   
-  background-position: bottom 7px ;   
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  pointer-events: none;          
-}
-
-
-.home-btn:hover::before {
-  opacity: 1;
-}
-
-
-.home-btn:hover::before,
-.home-btn.active::before {
-  opacity: 1;
-}
-
-
-
-
-.about-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('./star.png');
-  background-size: 70%;        
-  background-repeat: no-repeat;   
-  background-position: center;    
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  pointer-events: none;         
-}
-
-.about-btn:hover::before {
-  opacity: 1;
-}
-
-.graphics-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('./ruta.png');
-  background-size: 70%;         
-  background-repeat: no-repeat;   
-  background-position: center;    
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  pointer-events: none;           
-}
-
-.graphics-btn:hover::before {
-  opacity: 1;
   
+  transition: opacity 0.3s ease;
+  text-decoration: none;
 }
 
+.about-btn, .graphics-btn, .sculptures-btn {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: 0;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.home-btn::before, 
+.about-btn::before, 
+.graphics-btn::before, 
 .sculptures-btn::before {
   content: "";
   position: absolute;
@@ -120,32 +64,46 @@ header .home-btn{
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('./skulptur.png');
-  background-size: 70%;         
-  background-repeat: no-repeat;   
-  background-position: center;    
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
-  pointer-events: none;           
+  pointer-events: none;
 }
 
+.home-btn::before {
+  background-image: url('./Icons/squggle.png');
+  background-size: 85%;
+  background-position: bottom 7px;
+}
 
+.about-btn::before {
+  background-image: url('./Icons/star.png');
+  background-size: 70%;
+  background-position: center;
+}
+
+.graphics-btn::before {
+  background-image: url('./Icons/ruta.png');
+  background-size: 70%;
+  background-position: center;
+}
+
+.sculptures-btn::before {
+  background-image: url('./Icons/skulptur.png');
+  background-size: 70%;
+  background-position: center;
+}
+
+.home-btn:hover::before, 
+.about-btn:hover::before, 
+.graphics-btn:hover::before, 
 .sculptures-btn:hover::before {
   opacity: 1;
+  
 }
 
-
-body {
-  min-height: 100vh;
-  background: rgb(252, 169, 96);
-  background-image: url('./overlay.png');
-  background-repeat: no-repeat; 
-  max-width: 1440px;
-  margin: 0 auto;
-
-}
-
+/* Text Styling */
 h1 {
   font-family: 'MedievalSharp', cursive;
   font-size: 32px;
@@ -168,49 +126,24 @@ p {
   color: black;
 }
 
-
-#Home {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 10px;
-}
-
-
+/* Tab Content */
 .tabcontent {
   display: none;
-  padding: 20px 20px;
+  padding: 20px;
   height: 100%;
   color: black;
 }
-
-
-#About p {
-  text-align: left;
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.6;
-  float: left;
+.tabcontent:target {
+  display: block;
 }
 
-#Graphics .column {
-max-width: 30%;
-}
 
-#Graphics img {
-  filter: drop-shadow(0 0 0.2rem black);
-}
-
-#Sculpture img {
-  filter: drop-shadow(0 0 0.2rem black);
-}
-
+/* Grid & Box Layout */
 .box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 20px;
   padding-top: 40px;
 }
 
@@ -218,13 +151,6 @@ max-width: 30%;
   width: 400px;
   height: 400px;
   float: right;
-}
-
-#Graphics h3,
-#Sculptures h3,
-#Home h3 {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .grid-container {
@@ -244,11 +170,10 @@ max-width: 30%;
 .column img {
   width: 100%;
   vertical-align: middle;
-  padding: 20px;
-
+  padding-bottom: 20px;
 }
 
-
+/* Footer */
 footer {
   font-family: "MedievalSharp", cursive;
   font-weight: 600;
@@ -257,7 +182,6 @@ footer {
   margin-top: 40px;
   padding: 20px;
   word-spacing: 5px;
-  
 }
 
 footer .container {
@@ -283,4 +207,122 @@ footer a:hover {
 footer img {
   width: 30px;
   vertical-align: middle;
+}
+
+/* Mobile Styling (768px) */
+@media screen and (max-width: 768px) {
+  header .tab-button-container {
+    flex-direction: column;
+    gap: 2em;
+    padding: 20px;
+  }
+  
+ .home-btn::before {
+    background-size: 80%;
+    background-position: bottom;
+    padding-top: 0.5em;
+
+  }
+  .about-btn::before,
+  .graphics-btn::before,
+  .sculptures-btn::before {
+    background-size: 15%;
+  }
+
+  .box img {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  footer .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Mobile Styling (480px) */
+@media screen and (max-width: 480px) {
+    header .tab-button-container {
+        gap: 1.5em;
+    }
+
+    .home-btn {
+        font-size: 28px;
+        padding: 8px 16px;
+    }
+
+    .about-btn, .graphics-btn, .sculptures-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .home-btn::before {
+        background-size: 50%;
+        
+    }
+    .about-btn::before,
+    .graphics-btn::before,
+    .sculptures-btn::before {
+        background-size: 15%;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-container {
+        flex-direction: column;
+    }
+
+    .column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        gap: 10px;    }
 }
