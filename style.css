@@ -1,29 +1,28 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Space+Mono&display=swap');
 
-/* Base body styling */
+
 body {
   min-height: 100vh;
-  background: rgb(252, 169, 96);
-  background-image: url('./Icons/overlay.png');
-  background-repeat: no-repeat; 
   max-width: 1440px;
   margin: 0 auto;
+  background: url(./Icons/bakgrund\ 2.png);
 }
 
-/* Header Button Container */
 header .tab-button-container {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   gap: 6em;
   padding: 1.5rem;
-  background-color: rgb(203, 102, 58);
+  background: url(./Icons/bakgrund\ 2.png);
   width: 100%;
-;
 }
 
-/* Buttons */
+body:not(:has(:target)) #Home {
+  display: block;
+}
+
 
 .home-btn {
   font-family: 'MedievalSharp', cursive;
@@ -34,7 +33,7 @@ header .tab-button-container {
   padding-top: 4px;
   border: none;
   cursor: pointer;
-  
+  position: relative;
   transition: opacity 0.3s ease;
   text-decoration: none;
 }
@@ -42,7 +41,6 @@ header .tab-button-container {
 .about-btn, .graphics-btn, .sculptures-btn {
   font-family: 'MedievalSharp', cursive;
   font-size: 16px;
-  font-weight: 600;
   color: black;
   letter-spacing: 0;
   padding: 12px 24px;
@@ -79,19 +77,19 @@ header .tab-button-container {
 
 .about-btn::before {
   background-image: url('./Icons/star.png');
-  background-size: 70%;
+  background-size: 60%;
   background-position: center;
 }
 
 .graphics-btn::before {
   background-image: url('./Icons/ruta.png');
-  background-size: 70%;
+  background-size: 60%;
   background-position: center;
 }
 
 .sculptures-btn::before {
   background-image: url('./Icons/skulptur.png');
-  background-size: 70%;
+  background-size: 50%;
   background-position: center;
 }
 
@@ -100,7 +98,6 @@ header .tab-button-container {
 .graphics-btn:hover::before, 
 .sculptures-btn:hover::before {
   opacity: 1;
-  
 }
 
 /* Text Styling */
@@ -129,40 +126,49 @@ p {
 /* Tab Content */
 .tabcontent {
   display: none;
-  padding: 20px;
+  padding-top: 2em;
   height: 100%;
   color: black;
 }
+
 .tabcontent:target {
   display: block;
 }
-
 
 /* Grid & Box Layout */
 .box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: 20px;
-  padding-top: 40px;
+  column-gap: 40px;
+  padding-top: 60px;
 }
 
 .box img {
-  width: 400px;
-  height: 400px;
-  float: right;
+ max-width: 200px;
+float: right;
+gap: 10px;
+
 }
+
+.text-section {
+max-width: 400px;
+text-align: justify;
+}
+
 
 .grid-container {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  padding-top: 4em;
 }
 
+
 .column {
-  flex: 0 0 30%;
-  max-width: 20%;
+  flex: 0 0 25%;
+  max-width: 22%;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -173,7 +179,7 @@ p {
   padding-bottom: 20px;
 }
 
-/* Footer */
+
 footer {
   font-family: "MedievalSharp", cursive;
   font-weight: 600;
@@ -209,24 +215,34 @@ footer img {
   vertical-align: middle;
 }
 
-/* Mobile Styling (768px) */
+/* Mobile (768px) */
 @media screen and (max-width: 768px) {
+ 
   header .tab-button-container {
     flex-direction: column;
     gap: 2em;
     padding: 20px;
+    align-items: center;
   }
-  
- .home-btn::before {
+
+  .home-btn::before {
     background-size: 80%;
     background-position: bottom;
-    padding-top: 0.5em;
-
+    padding-top: 1em;
   }
+
   .about-btn::before,
   .graphics-btn::before,
   .sculptures-btn::before {
-    background-size: 15%;
+    background-size: 45%;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
   }
 
   .box img {
@@ -234,38 +250,12 @@ footer img {
     height: auto;
   }
 
-  .grid-container {
-    flex-direction: column;
-    gap: 15px;
-  }
 
-  .column {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 12px;
-  }
-
-  footer .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-/* Mobile Styling (480px) */
+Mobile (480px) 
 @media screen and (max-width: 480px) {
     header .tab-button-container {
         gap: 1.5em;
+        align-items: center;
     }
 
     .home-btn {
@@ -279,13 +269,16 @@ footer img {
     }
 
     .home-btn::before {
-        background-size: 50%;
+        background-size: 90%;
+        background-position: bottom;
+        padding-top: 1em;
+        
         
     }
     .about-btn::before,
     .graphics-btn::before,
     .sculptures-btn::before {
-        background-size: 15%;
+        background-size: 45%;
     }
 
     .box {
@@ -326,3 +319,32 @@ footer img {
         flex-direction: column;
         gap: 10px;    }
 }
+
+  /* Responsive grid */
+  .grid-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 100px;
+  }
+
+  .column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .column img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px
+  }
