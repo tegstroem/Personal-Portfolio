@@ -34,6 +34,8 @@ body:not(:has(:target)) #Home {
   border: none;
   cursor: pointer;
   position: relative;
+  z-index: 0; /* create stacking context so ::before stays above header */
+  overflow: hidden; /* keep ::before inside button padding */
   transition: opacity 0.3s ease;
   text-decoration: none;
 }
@@ -48,8 +50,11 @@ body:not(:has(:target)) #Home {
   border: none;
   cursor: pointer;
   position: relative;
+  z-index: 0; /* create stacking context so ::before stays above header */
+  overflow: hidden; /* keep ::before inside button padding */
   transition: opacity 0.3s ease;
   text-decoration: none;
+  display: inline-block; /* ensure ::before gets full box to render */
 }
 
 .home-btn::before, 
@@ -224,17 +229,28 @@ footer img {
     padding: 20px;
     align-items: center;
   }
+  .home-btn {
+    padding: 12px 24px;        
+    position: relative;
+    z-index: 0;                
+    overflow: hidden; 
+  }
 
   .home-btn::before {
     background-size: 80%;
-    background-position: bottom;
-    padding-top: 1em;
+    background-position: center-bottom;
+    
   }
 
   .about-btn::before,
   .graphics-btn::before,
   .sculptures-btn::before {
     background-size: 45%;
+  }
+
+  .tabcontent {
+    padding-top: 100px;
+
   }
 
   .box {
@@ -253,6 +269,7 @@ footer img {
 
 Mobile (480px) 
 @media screen and (max-width: 480px) {
+    
     header .tab-button-container {
         gap: 1.5em;
         align-items: center;
@@ -271,7 +288,7 @@ Mobile (480px)
     .home-btn::before {
         background-size: 90%;
         background-position: bottom;
-        padding-top: 1em;
+        padding-top: 100px;
         
         
     }
@@ -296,6 +313,7 @@ Mobile (480px)
 
     .grid-container {
         flex-direction: column;
+        padding-top: ;
     }
 
     .column {
@@ -330,11 +348,17 @@ Mobile (480px)
   .column {
     flex: 0 0 100%;
     max-width: 100%;
+    margin-top: 100px
   }
 
   .column img {
     width: 100%;
     height: auto;
+  }
+
+  .box {
+    margin-top: 180px;
+    padding: 25px;
   }
 
   h1 {
